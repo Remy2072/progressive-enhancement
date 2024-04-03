@@ -11,6 +11,105 @@
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
 
 			/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
+
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				padding:  1em;
+			}
+
+			details {
+				margin-bottom: 1em;
+				color: var(--blue);
+
+				& summary {
+					padding: 1em;
+					border: 0.1em solid var(--blue);
+					border-radius: 0.5em;
+					font-weight: 500;
+					cursor: pointer;
+					display: inline-block;
+				}
+
+				& summary::before {
+					content: "+";
+					margin-right: 0.5em;
+					font-size: 1em;
+					font-weight: 500;
+					transition: 0.3s ease;
+				}
+
+				& p {
+					border-radius: 0.5em;
+					padding: 1em;
+					width: 45em;
+					font-weight: 500;
+					border-top-left-radius: 0;
+				}
+			}
+
+			details[open]:nth-of-type(1) {
+				& summary {
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+
+				& summary::before {
+					animation-name: rotate;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+
+				& summary, p {
+					background-color: var(--purple);
+					border: 0.1em solid var(--purple);
+				}
+			}
+
+			details[open]:nth-of-type(2) {
+				& summary {
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+
+				& summary::before {
+					animation-name: rotate;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+
+				& summary, p {
+					background-color: var(--green);
+					border: 0.1em solid var(--green);
+				}
+			}
+
+			details[open]:nth-of-type(3) {
+				& summary {
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+
+				& summary::before {
+					animation-name: rotate;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+
+				& summary, p {
+					background-color: var(--yellow);
+					border: 0.1em solid var(--yellow);
+				}
+			}
+
+			@keyframes rotate {
+				from {transform: rotate(0);}
+				to {transform: rotate(45deg);}
+			}
 		</style>
 	</head>
 	<body>
@@ -29,6 +128,27 @@
 		Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).
 		-->
 
+		<details>
+			<summary>Wat is frontend development?</summary>
+			<p>
+				Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
+			</p>
+		</details>
+
+		<details>
+			<summary>Moet ik al kunnen coderen?</summary>
+			<p>
+				Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren! Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.
+			</p>
+		</details>
+
+		<details>
+			<summary>Wat is een Associate Degree?</summary>
+			<p>
+				Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6). Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web. Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp.
+				Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).
+			</p>
+		</details>
 
 		<!-- Hint: Dit stukje HTML geeft het misschien al weg :) -->
 		<details open>
